@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: row; /* 가로 방향 */
+    gap: 20px; /* 좌우간 간격 */
+    height: 100vh;  /*필요에 따라 높이 지정 */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* 왼쪽 영역: KeywordList */
+  .leftPane {
+    flex: 1; /* 가용 공간 1배 */
+    max-width: 400px; /* 최대너비 조절 가능 */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* 내용이 길면 스크롤 */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fafafa;
+    padding: 10px;
+  }
+  
+  /* 오른쪽 영역: RankList + ChartComponent 세로 배치 */
+  .rightPane {
+    flex: 2; /* 왼쪽보다 2배 넓게 */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+  }
+  
