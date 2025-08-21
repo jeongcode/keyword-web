@@ -7,6 +7,7 @@ on:
 
 jobs:
   deploy:
+    environment: main
     # deploy 잡을 github 최신 ubuntu vm에서 실행
     runs-on: ubuntu-latest
     steps:
