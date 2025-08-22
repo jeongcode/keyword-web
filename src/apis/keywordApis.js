@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 export function getKeywordListApi(params) {
-    const url = `http://localhost:9090/keyword/words`;
+    const url = `${apiUrl}/keyword/words`;
     return axios.get(url, params)
         .then((response) => {
             return response.data
@@ -13,7 +15,7 @@ export function getRelatedKeywordsApi(curKeyword) {
     const params = {
         keyword : curKeyword
     }
-    const url = `http://localhost:9090/keyword/related/words`;
+    const url = `${apiUrl}/keyword/related/words`;
     return axios.get(url, { params: params })
         .then((response) => {
             return response.data.urls;
@@ -25,7 +27,7 @@ export function getRelatedKeywordsHistoryApi(curKeyword) {
     const params = {
         keyword : curKeyword
     }
-    const url = `http://localhost:9090/keyword/related/words/history`;
+    const url = `${apiUrl}/keyword/related/words/history`;
     return axios.get(url, { params: params })
         .then((response) => {
             return response.data;
@@ -34,7 +36,7 @@ export function getRelatedKeywordsHistoryApi(curKeyword) {
 }
 
 export function postKeywordApi(keyword) {
-    const url = `http://localhost:9090/keyword/words`;
+    const url = `${apiUrl}/keyword/words`;
     return axios.post(url,keyword,{
         headers: { 'Content-Type': 'text/plain; charset=UTF-8' }
       })
@@ -45,7 +47,7 @@ export function postKeywordApi(keyword) {
 }
 
 export function putKeywordApi(keyword_id) {
-    const url = `http://localhost:9090/keyword/words`;
+    const url = `${apiUrl}/keyword/words`;
     return axios.put(url, keyword_id, {
         headers: { 'Content-Type': 'text/plain; charset=UTF-8' }
       })
