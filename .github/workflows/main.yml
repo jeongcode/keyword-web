@@ -40,4 +40,4 @@ jobs:
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/keyword-react-app:latest
             docker stop keyword-web-app || true
             docker rm keyword-web-app || true
-            docker run -d --name keyword-web-app -p 3000:80 ${{ secrets.DOCKERHUB_USERNAME }}/keyword-react-app:latest
+            docker run -d --name keyword-web-app -p 80:80 ${{ secrets.DOCKERHUB_USERNAME }}/keyword-react-app:latest
